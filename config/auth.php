@@ -36,6 +36,13 @@ return [
     */
 
     'guards' => [
+        //add by me
+        'users' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        //default
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -66,7 +73,14 @@ return [
     */
 
     'providers' => [
+        //add by me
         'users' => [
+            'driver' => 'eloquent',
+            'model' => App\LoginUser::class,
+        ],
+
+        //default
+        'user' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
